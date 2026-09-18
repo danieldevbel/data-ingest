@@ -58,7 +58,9 @@ ignore = ["D100", "D104", "D105", "D107", "ANN401"]
 convention = "google"
 
 [tool.mypy]
-python_version = "3.11"
+# Sem python_version fixo: o mypy adota a versao do interpretador em uso.
+# Fixar 3.11 faz a checagem quebrar ao rodar sob 3.12, porque os stubs de
+# bibliotecas compiladas para 3.12 usam sintaxe que a versao fixada rejeita.
 strict = true
 disallow_untyped_defs = true
 
